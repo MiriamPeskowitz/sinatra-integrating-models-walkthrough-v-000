@@ -1,9 +1,22 @@
 <h1>Your Text Analysis</h1>
 
-<h2>Number of Words: @analyzed_text.</h2>
+<h2>Number of Words: <%= @analyzed_text.count_of_words ></h2>
 
-<h2>Vowels: </h2>
+<h2>Vowels: <%= @analyzed_text.count_of_vowels ></h2>
 
 <h2>Consonants: </h2>
 
 <h2>Most Common Letter: _____ used _____ times</h2>
+def count_of_words(text)
+  words = text.split(" ")
+  words.count
+end
+
+def count_of_vowels(text)
+  text.scan(/[aeiou]/).count
+end
+
+def count_of_consonants(text)
+  text.scan(/[bcdfghjklmnpqrstvwxyz]/]).count
+end
+def most_used_letters
