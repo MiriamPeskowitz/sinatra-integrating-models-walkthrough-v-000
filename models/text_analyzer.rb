@@ -16,7 +16,7 @@ class TextAnalyzer
   end
 
   def count_of_consonants(text)
-    text.scan(/[bcdfghjklmnpqrstvwxyz]/]).count
+    text.scan(/[bcdfghjklmnpqrstvwxyz]/).count
 end
   def most_used_letters
     s1 = text.gsub(/[^a-z]/, '') # gets rid of spaces
